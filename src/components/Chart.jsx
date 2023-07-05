@@ -14,14 +14,13 @@ const Chart = () => {
         console.error('Error fetching data:', error);
       }
     }
-
     fetchData();
   }, []);
 
 
   if (!data) {
     return (
-      <div className="h-screen mt-5">
+      <div className="pt-10">
         <div className="h-10 w-full bg-teal-500 rounded-xl border-2 border-teal-700 flex items-center justify-center text-bold text-white">
           <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24"></svg>
           Failed to Load stats from leetcode...
@@ -37,8 +36,9 @@ const Chart = () => {
   const hardPercentage = ((data.hardSolved / totalSolved) * 100).toFixed(1)
 
   return (
-    <div className="py-5">
-      <div className=" bg-white-400 text-gray-500 rounded-xl border-2 border-teal-700 shadow-xl py-5 px-5 w-full">
+    <div className="">
+    <div className="max-w-[1240px] mx-auto py-5 px-10">
+      <div className=" text-gray-500 rounded-xl border-2 border-teal-700 shadow-xl py-5 px-5 w-full">
         <div className="flex w-full">
           <h3 className="text-lg font-semibold leading-tight flex-1">Total Problems Solved</h3>
           <div className="relative h-5 leading-none">
@@ -91,6 +91,7 @@ const Chart = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
